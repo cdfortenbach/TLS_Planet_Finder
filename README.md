@@ -248,7 +248,7 @@ numpy:
 Oliphant, T. E. 2015, Guide to NumPy, 2nd edn. (USA: CreateSpace Independent Publishing Platform)
 
 ## Version History
-* 0.1.1 (2020-08-10)
+* 1.0.0 (2020-08-10)
     Initial public release
 
 ## License
