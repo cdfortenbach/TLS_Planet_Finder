@@ -1,5 +1,5 @@
 #####################################################################
-Input TOI list for TLS planet finder:
+Input TOI list for TLS_Planet_Finder:
 #####################################################################
 #
 #TOI     Mission     Bitmask
