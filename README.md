@@ -7,7 +7,7 @@ This tool is an implementation of the Transit Least Squares (TLS) algorithm (and
 ## Getting Started
 
 ### Hardware Configuration
-* The TLS Planet Finder code was developed and tested on a modest desktop computer (see Table 1).  In addition, all production runs to date have been executed on this machine.  
+* The TLS_Planet_Finder code was developed and tested on a modest desktop computer (see Table 1).  In addition, all production runs to date have been executed on this machine.  
 
  Table 1. Hardware for Development and Testing
 
@@ -23,16 +23,16 @@ This tool is an implementation of the Transit Least Squares (TLS) algorithm (and
 | Cooling           | Air                    |
 
 
-* The full TLS Planet Finder code has a very small memory storage footprint of less than 100KB.  A production run could generate a significant memory storage requirement depending on the size of the TIC/TOI data-sets.  The vetting sheet files (.svg) could be as large as 150MB each, but typically are more like 35MB. In execution, again the RAM requirements are dependent on the size of the TIC/TOI data-set that you are trying to analyze.  Normally 4GB of free RAM on top of any other system requirements should be adequate unless you are trying to analyze a very large data-set. 
+* The full TLS_Planet_Finder code has a very small memory storage footprint of less than 100KB.  A production run could generate a significant memory storage requirement depending on the size of the TIC/TOI data-sets.  The vetting sheet files (.svg) could be as large as 150MB each, but typically are more like 35MB. In execution, again the RAM requirements are dependent on the size of the TIC/TOI data-set that you are trying to analyze.  Normally 4GB of free RAM on top of any other system requirements should be adequate unless you are trying to analyze a very large data-set. 
 
 ### Software Configuration/Installation
 * The desktop computer described in the previous section runs the Windows 10 Pro operating system.  We chose to develop the TLS_Planet_Finder to run in a Linux environment.  We used Oracle VirtualBox software (6.1.2) to run a Linux guest OS (specifically Ubuntu 18.04) under the Windows 10 host.  Of course a dedicated Linux machine should work just fine.  The installation and execution instructions provided here assume that the user will be using a Linux OS.
 
 * The VirtualBox software allows files to be shared between the two OS's, which is very useful, but otherwise it keeps the two systems separate.  
 
-* The TLS Planet Finder code was written in Python 3.7.6.  It is highly recommended that you use Python 3.7.6 to run the TLS Planet Finder
+* The TLS_Planet_Finder code was written in Python 3.7.6.  It is highly recommended that you use Python 3.7.6 to run the TLS Planet Finder
 
-* TLS Planet Finder has a number of Python dependencies (see Table 2); however, many of them will be satisfied by an up-to-date scientific Python installation.  Unless you actively maintain your own scientific Python distribution, we recommend installing the latest Anaconda Linux distribution.
+* TLS_Planet_Finder has a number of Python dependencies (see Table 2); however, many of them will be satisfied by an up-to-date scientific Python installation.  Unless you actively maintain your own scientific Python distribution, we recommend installing the latest Anaconda Linux distribution.
 
 * It may make sense to use virtualenv (https://pypi.org/project/virtualenv/) to create an isolated Python environment for this project.
 
