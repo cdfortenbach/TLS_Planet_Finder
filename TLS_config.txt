@@ -1,0 +1,84 @@
+##########################################
+Config parameters for TLS_Planet_Finder:
+##########################################
+#
+# Parameter Description         User Input
+# 
+  window_length               , 901
+  ndist_factor                , 8    
+  outlier_threshold           , 1.65
+  stdev_threshold             , 2.75
+  sigma_lower                 , 10
+  sigma_upper                 , 3 
+  planets_per_system:         , 2
+  oversampling_factor:        , 3
+  duration_grid_step:         , 1.1
+  transit_depth_min:          , 0.00001
+#
+######
+#
+# Parameters to tune light curve filter properties:
+#
+# [window_length] (positive, int, odd) For scipy.medfilt(), number of sample
+# pts in the median filter window.
+#
+# [ndist_factor] (positive, int) Increasing this factor will reduce the 
+# minimum distance between major anomaly troughs identified 
+# (ndist = int(len(t)/ndist_factor). 
+#
+# [outlier_threshold] (positive, float) Remove transient if abs value of 
+#  outlier depth is > 'outlier_threshold' * the median of all other major 
+#  troughs.
+#
+# [stdev_threshold] (positive, float) Remove transient if the value of the 
+#  outlier std dev > 'stdev_threshold' * overall std dev of entire dataset.
+#
+######
+#
+# For lightkurve.remove_outliers()
+# Parameters to eliminate raw light curve outliers:
+#
+# [sigma_lower] (int, default: 5) Number of std deviations to use as lower bound
+# for clipping limit. Can be set to float(‘inf’) in order to avoid clipping 
+# any outliers below the median.
+#
+# [sigma_upper] (int, default: 5) Number of std deviations to use as upper bound
+# clipping limit. Can be set to float(‘inf’) in order to avoid clipping 
+# any outliers above the median.
+#
+######
+#
+# General parameters:
+#
+# [planets_per_system] (int, 1 to 4) Limit on number of planet candidates 
+# analyzed for each host star system.
+#
+######
+#
+# # For transitleastsquares.power()
+# Parameters to balance detection efficiency and computational requirements:
+#
+# [oversampling_factor] (int, default: 3) Oversampling of the period grid to 
+# avoid that the true period falls in between trial periods and is missed.  
+# Note: Higher oversampling_factor increases the detection efficiency at the 
+# cost of a linear increase in computational effort. Reasonable values may be 
+# 2-5 and should be tested empirically for the actual data. An upper limit can
+# be found when the period step is smaller than the cadence, so that the error
+# from shifting the model by one data point in phase dominates over the period 
+# trial shift. For a planet with a 365-day period orbiting a solar mass and 
+# radius star, this parity is reached for oversampling_factor=9 at 30 min 
+# cadence (Kepler LC). Shorter periods have reduced oversampling benefits, as 
+# the cadence becomes a larger fraction of the period.
+# 
+# [duration_grid_step] (float, default: 1.1) Grid step width between subsequent 
+# trial durations, so that dur𝑛+1 = dur𝑛 × duration_grid_step. With the default
+# value of 1.1, each subsequent trial duration is longer by 10%.
+# 
+# [transit_depth_min] (float, default: 10e^-6) Shallowest transit depth to be 
+# fitted. Transit depths down to half the transit_depth_min can be found at 
+# reduced sensitivity. A reasonable value should be estimated from the data to
+# balance sensitivity and avoid fitting the noise floor. Overfitting may cause
+# computational requirements larger by a factor of 10. For reference, the 
+# shallowest known transit is 11.9 ppm (Kepler-37b, Barclay et al. 2013).
+#
+# All other parameters are set to default (see TLS Documentation)
