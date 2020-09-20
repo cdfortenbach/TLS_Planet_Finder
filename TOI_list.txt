@@ -5,7 +5,7 @@ Input TOI list for TLS planet finder:
 #TOI     Mission     Bitmask
 #736        TESS        hard   # 2 planet system with 1 sectors of data
 #1260       TESS        hard   # 2 planet system with 1 sectors of data
-270         TESS     default   # 3 planet system with 3 sectors of data 
+270         TESS        hard   # 3 planet system with 3 sectors of data 
 #
 #
 # [TOI] (int) TESS Object of Interest, no .xx suffix
